@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:c8ffbdbfb050f7a053b515c098a510e0:6fb69c97360c05d1b1876979f2344ce8:9cc7485e40b91ef2fbf298800242e19c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="knight2.png" width="509" height="513">
+    <sprite n="AttackDown (1)" x="371" y="210" w="43" h="72"/>
+    <sprite n="AttackDown (2)" x="416" y="210" w="53" h="72"/>
+    <sprite n="AttackDown (3)" x="370" y="434" w="46" h="78"/>
+    <sprite n="AttackDown (4)" x="433" y="358" w="67" h="74"/>
+    <sprite n="AttackLeft (1)" x="1" y="284" w="44" h="72"/>
+    <sprite n="AttackLeft (2)" x="93" y="137" w="60" h="71"/>
+    <sprite n="AttackLeft (3)" x="221" y="65" w="72" h="69"/>
+    <sprite n="AttackLeft (4)" x="147" y="65" w="72" h="67"/>
+    <sprite n="AttackRight (1)" x="155" y="137" w="44" h="71"/>
+    <sprite n="AttackRight (2)" x="201" y="137" w="61" h="71"/>
+    <sprite n="AttackRight (3)" x="295" y="65" w="72" h="69"/>
+    <sprite n="AttackRight (4)" x="72" y="65" w="73" h="66"/>
+    <sprite n="AttackUp (1)" x="1" y="434" w="53" h="74"/>
+    <sprite n="AttackUp (2)" x="56" y="434" w="43" h="74"/>
+    <sprite n="AttackUp (3)" x="101" y="434" w="56" h="74"/>
+    <sprite n="AttackUp (4)" x="159" y="434" w="71" h="74"/>
+    <sprite n="DieDown (1)" x="93" y="358" w="45" h="73"/>
+    <sprite n="DieDown (2)" x="288" y="1" w="63" h="61"/>
+    <sprite n="DieDown (3)" x="218" y="1" w="68" h="49"/>
+    <sprite n="DieLeft (1)" x="264" y="137" w="47" h="71"/>
+    <sprite n="DieLeft (2)" x="353" y="1" w="66" h="62"/>
+    <sprite n="DieLeft (3)" x="72" y="1" w="71" h="40"/>
+    <sprite n="DieRight (1)" x="369" y="65" w="47" h="70"/>
+    <sprite n="DieRight (2)" x="421" y="1" w="65" h="62"/>
+    <sprite n="DieRight (3)" x="145" y="1" w="71" h="40"/>
+    <sprite n="DieUp (1)" x="140" y="358" w="63" h="73"/>
+    <sprite n="DieUp (2)" x="1" y="65" w="69" h="64"/>
+    <sprite n="DieUp (3)" x="1" y="1" w="69" h="39"/>
+    <sprite n="HurtDown" x="313" y="137" w="44" h="71"/>
+    <sprite n="HurtLeft" x="359" y="137" w="46" h="71"/>
+    <sprite n="HurtRight" x="407" y="137" w="47" h="71"/>
+    <sprite n="HurtUp" x="232" y="434" w="44" h="74"/>
+    <sprite n="IdleDown (1)" x="205" y="358" w="43" h="73"/>
+    <sprite n="IdleDown (2)" x="250" y="358" w="44" h="73"/>
+    <sprite n="IdleDown (3)" x="47" y="284" w="44" h="72"/>
+    <sprite n="IdleDown (4)" x="296" y="358" w="43" h="73"/>
+    <sprite n="IdleRight (1)" x="93" y="284" w="44" h="72"/>
+    <sprite n="IdleRight (2)" x="139" y="284" w="44" h="72"/>
+    <sprite n="IdleRight (3)" x="185" y="284" w="44" h="72"/>
+    <sprite n="IdleRight (4)" x="231" y="284" w="44" h="72"/>
+    <sprite n="IdleUp (1)" x="456" y="137" w="44" h="71"/>
+    <sprite n="IdleUp (2)" x="418" y="65" w="44" h="70"/>
+    <sprite n="IdleUp (3)" x="464" y="65" w="44" h="70"/>
+    <sprite n="IdleUp (4)" x="1" y="137" w="44" h="70"/>
+    <sprite n="LeftIdle (1)" x="277" y="284" w="44" h="72"/>
+    <sprite n="LeftIdle (2)" x="1" y="210" w="44" h="71"/>
+    <sprite n="LeftIdle (3)" x="47" y="210" w="44" h="71"/>
+    <sprite n="LeftIdle (4)" x="93" y="210" w="44" h="71"/>
+    <sprite n="WalkDown (1)" x="341" y="358" w="44" h="73"/>
+    <sprite n="WalkDown (2)" x="323" y="284" w="43" h="72"/>
+    <sprite n="WalkDown (3)" x="387" y="358" w="44" h="73"/>
+    <sprite n="WalkDown (4)" x="368" y="284" w="43" h="72"/>
+    <sprite n="WalkLeft (1)" x="413" y="284" w="44" h="72"/>
+    <sprite n="WalkLeft (2)" x="459" y="284" w="44" h="72"/>
+    <sprite n="WalkLeft (3)" x="1" y="358" w="44" h="72"/>
+    <sprite n="WalkLeft (4)" x="139" y="210" w="45" h="71"/>
+    <sprite n="WalkRight (1)" x="186" y="210" w="44" h="71"/>
+    <sprite n="WalkRight (2)" x="47" y="358" w="44" h="72"/>
+    <sprite n="WalkRight (3)" x="232" y="210" w="45" h="71"/>
+    <sprite n="WalkRight (4)" x="47" y="137" w="44" h="70"/>
+    <sprite n="WalkUp (1)" x="279" y="210" w="44" h="71"/>
+    <sprite n="WalkUp (2)" x="278" y="434" w="44" h="74"/>
+    <sprite n="WalkUp (3)" x="325" y="210" w="44" h="71"/>
+    <sprite n="WalkUp (4)" x="324" y="434" w="44" h="74"/>
+</TextureAtlas>
