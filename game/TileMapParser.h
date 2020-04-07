@@ -24,7 +24,12 @@ struct TileSheetData
     sf::Vector2u tileSize;
 };
 
-using Layer = std::vector<std::shared_ptr<Tile>>;
+struct Layer
+{
+    std::vector<std::shared_ptr<Tile>> tiles;
+    bool isVisible;
+};
+
 using MapTiles = std::map<std::string, std::shared_ptr<Layer>>; // Stores layer names with layer.
 using TileSet = std::unordered_map<unsigned int, std::shared_ptr<TileInfo>>; // Stores the different tile types that can be used.
 using TileSheets = std::map<int, std::shared_ptr<TileSheetData>>;

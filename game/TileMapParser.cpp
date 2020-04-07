@@ -30,7 +30,7 @@ std::vector<std::shared_ptr<Object>> TileMapParser::Parse(const std::string& fil
 
     for (const auto& layer : *tiles)
     {
-        for (const auto& tile : *layer.second)
+        for (const auto& tile : layer.second->tiles)
         {
             std::shared_ptr<TileInfo> tileInfo = tile->properties;
 
@@ -38,12 +38,16 @@ std::vector<std::shared_ptr<Object>> TileMapParser::Parse(const std::string& fil
 
             const unsigned int tileScale = 1;
 
-            auto sprite = tileObject->AddComponent<C_Sprite>();
-            sprite->SetTextureAllocator(&textureAllocator);
-            sprite->Load(tileInfo->textureID);
-            sprite->SetTextureRect(tileInfo->textureRect);
-            sprite->SetScale(tileScale, tileScale);
-            sprite->SetSortOrder(layerCount);
+            // Checks if layer is visible before adding sprite component.
+            if (layer.second->isVisible)
+            {
+                auto sprite = tileObject->AddComponent<C_Sprite>();
+                sprite->SetTextureAllocator(&textureAllocator);
+                sprite->Load(tileInfo->textureID);
+                sprite->SetTextureRect(tileInfo->textureRect);
+                sprite->SetScale(tileScale, tileScale);
+                sprite->SetSortOrder(layerCount);
+            }
 
             float x = tile->x * tileSizeX * tileScale + offset.x;
             float y = tile->y * tileSizeY * tileScale + offset.y;
@@ -201,12 +205,22 @@ std::pair<std::string, std::shared_ptr<Layer>> TileMapParser::BuildLayer(xml_nod
             tile->y = count / width;
 
 
-            layer->emplace_back(tile);
+            layer->tiles.emplace_back(tile);
         }
 
         count++;
     }
 
     const std::string layerName = layerNode->first_attribute("name")->value();
+    // We now check if a visible attribute is present and use that.
+    // If no attribute present, layer defaults to visible.
+    bool layerVisible = true;
+    xml_attribute<>* visibleAttribute = layerNode->first_attribute("visible");
+    if (visibleAttribute)
+    {
+        layerVisible = std::stoi(visibleAttribute->value());
+    }
+    layer->isVisible = layerVisible;
+
     return std::make_pair(layerName, layer);
 }
