@@ -2,7 +2,7 @@
 #include "AnimationLoader.h"
 
 SceneGame::SceneGame(ResourceAllocator<sf::Texture>& textureAllocator)
-    : textureAllocator(textureAllocator) { }
+    : textureAllocator(textureAllocator), mapParser(textureAllocator) { }
 
 void SceneGame::OnCreate()
 {
@@ -13,12 +13,23 @@ void SceneGame::OnCreate()
 
     auto movement = player->AddComponent<C_KeyboardMovement>();
     movement->SetInput(&input);
-
+     
     auto animation = player->AddComponent<C_Animation>();
 
     int playerTextureID = textureAllocator.Add("Resources/knight.png");
     AnimationLoader animations;
     animations.Parse("Resources/knight.xml", playerTextureID, animation);
+
+
+
+    // You will need to play around with this offset until it fits 
+    // the level in at your chosen resolution. This worls for 1920 * 1080.
+    // In future we will remove this hardcoded offset when we 
+    // look at allowing the player to change resolutions.
+    sf::Vector2i mapOffset(-100, 128);
+    //sf::Vector2i mapOffset(128, 128);
+    std::vector<std::shared_ptr<Object>> levelTiles = mapParser.Parse("Resources/Test Map 1.tmx", mapOffset);
+    objects.Add(levelTiles);
 
     objects.Add(player);
 }

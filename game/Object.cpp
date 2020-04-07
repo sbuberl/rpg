@@ -49,8 +49,10 @@ void Object::LateUpdate(float timeDelta)
 
 void Object::Draw(Window& window)
 {
-    for (int i = components.size() - 1; i >= 0; i--)
-    {
-        components[i]->Draw(window);
-    }
+    drawable->Draw(window);
+}
+
+std::shared_ptr<C_Drawable> Object::GetDrawable()
+{
+    return drawable;
 }

@@ -15,12 +15,12 @@ public:
     void EndDraw();
 
     sf::Vector2u GetCenter() const;
+    sf::FloatRect GetViewSpace() const;
 
     bool IsOpen() const;
 
 private:
     sf::RenderWindow window;
-
 };
 
 #endif /* _WINDOW_H_ */

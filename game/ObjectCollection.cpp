@@ -1,8 +1,18 @@
 #include "ObjectCollection.h"
 
+void ObjectCollection::Add(std::shared_ptr<Object> object)
+{
+    newObjects.push_back(object);
+}
+
+void ObjectCollection::Add(std::vector<std::shared_ptr<Object>>& otherObjects)
+{
+    newObjects.insert(newObjects.end(), otherObjects.begin(), otherObjects.end());
+}
+
 void ObjectCollection::Update(float deltaTime)
 {
-    for (auto& o : objects)
+    for (const auto& o : objects)
     {
         o->Update(deltaTime);
     }
@@ -10,7 +20,7 @@ void ObjectCollection::Update(float deltaTime)
 
 void ObjectCollection::LateUpdate(float deltaTime)
 {
-    for (auto& o : objects)
+    for (const auto& o : objects)
     {
         o->LateUpdate(deltaTime);
     }
@@ -18,15 +28,7 @@ void ObjectCollection::LateUpdate(float deltaTime)
 
 void ObjectCollection::Draw(Window& window)
 {
-    for (auto& o : objects)
-    {
-        o->Draw(window);
-    }
-}
-
-void ObjectCollection::Add(std::shared_ptr<Object> object)
-{
-    newObjects.push_back(object);
+    drawables.Draw(window);
 }
 
 void ObjectCollection::ProcessNewObjects()
@@ -43,7 +45,9 @@ void ObjectCollection::ProcessNewObjects()
             o->Start();
         }
 
-        objects.assign(newObjects.begin(), newObjects.end());
+        objects.insert(objects.end(), newObjects.begin(), newObjects.end());
+
+        drawables.Add(newObjects); // New Line.
 
         newObjects.clear();
     }
@@ -54,9 +58,9 @@ void ObjectCollection::ProcessRemovals()
     auto objIterator = objects.begin();
     while (objIterator != objects.end())
     {
-        auto obj = **objIterator;
+        auto obj = *objIterator;
 
-        if (obj.IsQueuedForRemoval())
+        if (obj->IsQueuedForRemoval())
         {
             objIterator = objects.erase(objIterator);
         }
@@ -65,4 +69,6 @@ void ObjectCollection::ProcessRemovals()
             ++objIterator;
         }
     }
+
+    drawables.ProcessRemovals(); // New Line.
 }

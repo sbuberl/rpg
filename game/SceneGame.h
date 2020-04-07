@@ -9,6 +9,7 @@
 #include "ResourceAllocator.h"
 #include "ObjectCollection.h"
 #include "C_Animation.h"
+#include "TileMapParser.h"
 
 class SceneGame : public Scene
 {
@@ -32,6 +33,7 @@ private:
     Input input;
 
     ObjectCollection objects;
+    TileMapParser mapParser;
 };
 
 #endif /* _SCENE_GAME_H_ */

@@ -3,8 +3,9 @@
 
 #include "Component.h"
 #include "ResourceAllocator.h"
+#include "C_Drawable.h"
 
-class C_Sprite : public Component
+class C_Sprite : public Component, public C_Drawable
 {
 public:
     C_Sprite(Object* owner);
@@ -25,6 +26,8 @@ public:
 
     // We’ll use this to update our sprite based on our position.
     void LateUpdate(float deltaTime) override;
+
+    void SetScale(float x, float y);
 
 private:
     ResourceAllocator<sf::Texture>* allocator;
