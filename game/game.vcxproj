@@ -171,6 +171,8 @@
     <ClInclude Include="Bitmask.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="C_Animation.h" />
+    <ClInclude Include="C_BoxCollider.h" />
+    <ClInclude Include="C_Collider.h" />
     <ClInclude Include="C_Drawable.h" />
     <ClInclude Include="C_KeyboardMovement.h" />
     <ClInclude Include="C_Transform.h" />
@@ -195,6 +197,8 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bitmask.cpp" />
     <ClCompile Include="C_Animation.cpp" />
+    <ClCompile Include="C_BoxCollider.cpp" />
+    <ClCompile Include="C_Collider.cpp" />
     <ClCompile Include="C_Drawable.cpp" />
     <ClCompile Include="C_KeyboardMovement.cpp" />
     <ClCompile Include="C_Sprite.cpp" />

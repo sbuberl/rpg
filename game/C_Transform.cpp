@@ -1,7 +1,7 @@
 #include "C_Transform.h"
 
 C_Transform::C_Transform(Object* owner)
-    : Component(owner), position(0.f, 0.f) { }
+    : Component(owner), position(0.f, 0.f), isStaticTransform(false) { }
 
 void C_Transform::SetPosition(float x, float y)
 {
@@ -49,3 +49,7 @@ const sf::Vector2f& C_Transform::GetPosition() const
 {
     return position;
 }
+
+void C_Transform::SetStatic(bool isStatic) { isStaticTransform = isStatic; }
+
+bool C_Transform::isStatic() const { return isStaticTransform; }
