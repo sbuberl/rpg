@@ -5,6 +5,7 @@
 #include "Component.h"
 #include "C_Transform.h"
 #include "C_Drawable.h"
+#include "C_InstanceID.h"
 
 #include <vector>
 
@@ -77,12 +78,11 @@ public:
     };
 
     std::shared_ptr<C_Transform> transform;
-
+    std::shared_ptr<C_InstanceID> instanceID;
 private:
     std::vector<std::shared_ptr<Component>> components;
     bool queuedForRemoval;
     std::shared_ptr<C_Drawable> drawable;
-
 };
 
 #endif /* _OBJECT_H_ */

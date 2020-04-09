@@ -174,12 +174,14 @@
     <ClInclude Include="C_BoxCollider.h" />
     <ClInclude Include="C_Collider.h" />
     <ClInclude Include="C_Drawable.h" />
+    <ClInclude Include="C_InstanceID.h" />
     <ClInclude Include="C_KeyboardMovement.h" />
     <ClInclude Include="C_Transform.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectCollection.h" />
+    <ClInclude Include="Quadtree.h" />
     <ClInclude Include="ResourceAllocator.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGame.h" />
@@ -200,6 +202,7 @@
     <ClCompile Include="C_BoxCollider.cpp" />
     <ClCompile Include="C_Collider.cpp" />
     <ClCompile Include="C_Drawable.cpp" />
+    <ClCompile Include="C_InstanceID.cpp" />
     <ClCompile Include="C_KeyboardMovement.cpp" />
     <ClCompile Include="C_Sprite.cpp" />
     <ClCompile Include="C_Transform.cpp" />
@@ -208,6 +211,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectCollection.cpp" />
+    <ClCompile Include="Quadtree.cpp" />
     <ClCompile Include="SceneStateMachine.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneSplashScreen.cpp" />
